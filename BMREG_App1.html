@@ -19,7 +19,14 @@
     
 <style>
 }
+	.container {
+            text-align: left;
+            margin-left: 0; /* Optional: ensures no extra margin on the left */
+        }
 
+.hidden { display: none; }
+        .container { text-align: left; margin-top: 2px; }
+}
 
 header {
     position: relative;
@@ -186,9 +193,16 @@ table th, table td {
 <h1 class="title">BMREG PERFORMANCE TRACKER</h1>
 
 <p class="fade1" id="currentTime">Current Time</p>
-
+	
+<!--
 <p>For more details, view the <a class="fade2" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUfpB5MnoesM0ig1qSwxuCqoOvzfz_3GGbBNj-3F7ENBMn2iqkGVilBWKMW9RfCk1Eo0kPE6qwlgtA/pubhtml" target="_blank"> Reports</a>.</p>
+-->
+	<a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUfpB5MnoesM0ig1qSwxuCqoOvzfz_3GGbBNj-3F7ENBMn2iqkGVilBWKMW9RfCk1Eo0kPE6qwlgtA/pubhtml" </a>
 
+<div class="container">
+        <a href="#" onclick="showPasswordPrompt()">View Reports</a>
+</div>
+		
 <hr>
 
 <br>
