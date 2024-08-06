@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 
@@ -23,6 +25,7 @@
             text-align: left;
             margin-left: 0; /* Optional: ensures no extra margin on the left */
         }
+
 
 .hidden { display: none; }
         .container { text-align: left; margin-top: 2px; }
@@ -184,6 +187,24 @@ table th, table td {
             max-width: 100%;
         }
 
+.fade123 {
+            animation: fade-animation 2s infinite;
+            -webkit-animation: fade-animation 2s infinite;
+        }
+        @keyframes fade-animation {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        @-webkit-keyframes fade-animation {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+
+ #submittedData {
+            display: none;
+        }
+
     </style>
 </head>
 
@@ -197,16 +218,17 @@ table th, table td {
 <!--
 <p>For more details, view the <a class="fade2" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUfpB5MnoesM0ig1qSwxuCqoOvzfz_3GGbBNj-3F7ENBMn2iqkGVilBWKMW9RfCk1Eo0kPE6qwlgtA/pubhtml" target="_blank"> Reports</a>.</p>
 -->
-	<a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUfpB5MnoesM0ig1qSwxuCqoOvzfz_3GGbBNj-3F7ENBMn2iqkGVilBWKMW9RfCk1Eo0kPE6qwlgtA/pubhtml" </a>
 
 <div class="container">
-        <a href="#" onclick="showPasswordPrompt()">View Reports</a>
-</div>
-
-<div id="passwordPrompt" class="hidden">
+	<span>For more details, </span>
+        <a href="#" class="fade123" onclick="showPasswordPrompt()">View Reports</a>
+    </div>
+<br>
+    <div id="passwordPrompt" class="hidden">
         <input type="password" id="password" placeholder="Enter Password">
         <button onclick="checkPassword()">Submit</button>
-</div>
+    </div>
+
 		
 <hr>
 
@@ -225,6 +247,12 @@ table th, table td {
 <form onsubmit="submitForm(event)">
     <input type="submit" value="Submit" class="submitButton" />
 </form>
+
+<br>
+
+<!--
+<button onclick="showSubmittedData()">Show Submitted Data</button>
+-->
 
 <div id="submittedData">
 
@@ -437,14 +465,26 @@ function showPasswordPrompt() {
 
         function checkPassword() {
             var password = document.getElementById('password').value;
-            if (password === '0831*') { // Replace 'your_password' with your actual password
+            if (password === 'SFL123*') { // Replace 'your_password' with your actual password
                 window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vRUfpB5MnoesM0ig1qSwxuCqoOvzfz_3GGbBNj-3F7ENBMn2iqkGVilBWKMW9RfCk1Eo0kPE6qwlgtA/pubhtml', '_blank');
                 document.getElementById('passwordPrompt').classList.add('hidden');
             } else {
                 alert('Incorrect password');
             }
         }
-	
+<!--
+function showSubmittedData() {
+            const password = prompt("Enter the password to view the submitted data:");
+            const correctPassword = "SFL123*";  // Replace with your actual password
+            
+            if (password === correctPassword) {
+                document.getElementById("submittedData").style.display = "block";
+            } else {
+                alert("Incorrect password.");
+            }
+        }
+-->
+
 </script>
 <div class="footer-text">
 <p class="fade">Designed & Developed By Mr Veerendra, Regional Office, Belagavi</p>
